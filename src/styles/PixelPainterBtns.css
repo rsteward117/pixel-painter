@@ -1,0 +1,16 @@
+.main-container{
+    text-align: center;
+
+}
+
+.pixel-painter-btn{
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    border: none;
+    margin-right: 25px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 10px 5px 0px rgb(134 151 168 / 8%);
+}
