@@ -1,7 +1,14 @@
-import '../styles/PixelPainterBtns.css'
+import react, {useState} from "react";
+import '../styles/PixelPainterBtns.css';
 
 
-function PixelPainterBtns() {
+function PixelPainterBtns({setNumberOfCells, numberOfCells}) {
+
+    const addMoreCells = () => {
+        let userInput = prompt('Change grid cells?', numberOfCells);
+        setNumberOfCells(userInput);
+    }
+
     return (
         <>
         <div className="main-container">
@@ -10,7 +17,7 @@ function PixelPainterBtns() {
             </header>
             <section className='buttons-container'>
                 <button className='pixel-painter-btn'>Reset!</button>
-                <button className='pixel-painter-btn'>Change Cells!</button>
+                <button className='pixel-painter-btn' onClick={addMoreCells}>Change Cells!</button>
                 <button className='pixel-painter-btn'>Color Selecter!</button>
             </section>
 
