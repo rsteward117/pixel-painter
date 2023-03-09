@@ -1,0 +1,53 @@
+
+.sideBar-header{
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.add-cells-label{
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.add-cells-input{
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 2px 5px 0px rgba(245, 245, 245, 0.5);
+    border: none;
+    font-weight: 200;
+    
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.pixel-painter-btn{
+    cursor: pointer;
+    border: none;
+    font-weight: 200;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 3px 6px 0px rgba(245, 245, 245, 0.5);
+}
+
+.pixel-painter-btn:hover{
+    transition: all 0.3s ease-out;
+    padding-right: 20px;
+}
+
+.color-picker{
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 80%;
+}

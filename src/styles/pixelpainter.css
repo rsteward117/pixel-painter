@@ -1,19 +1,17 @@
 .pixel-painter-main{
-    margin-top: 15px;
     width: 100%;
     height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
 }
-
 
 .pixel-container{
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
-    border: 5px solid black;
-    width: 75%;
-    height: 75%;
+    border: 3px ridge black;
+    width: 50%;
+    height: 98%;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -21,11 +19,12 @@
 }
 
 .frame{
-    border: 5px solid black;
+    border: 5px ridge black;
     width: 95%;
-    height: 90%;
+    height: 95%;
     border-radius: 15px;
 }
+
 .grid-container{
     width: 100%;
     height: 100%;
@@ -33,5 +32,5 @@
 }
 
 .grid-cell{
-    border: 1px solid black;
+    border: 1px ridge black;
 }
