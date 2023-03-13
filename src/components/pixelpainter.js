@@ -9,6 +9,7 @@ import downloadjs from 'downloadjs';
 
 function PixelPainter() {
 
+    const ref = useRef(null);
     //number of cells use state that holds the number of cells needed to be added in the grid
     const [numberOfCells, setNumberOfCells] = useState(16);
     const [color, setColor] = useState("#000000");
@@ -29,13 +30,10 @@ function PixelPainter() {
         }
     }
 
-
-
     const handleImageDownload = async () => {
-        const element = document.getElementById('download');
+        const element = document.getElementById("download");
         const canvas = await html2canvas(element);
-        const dataURL = canvas.toDataURL('image/jpg');
-        downloadjs(dataURL, 'download.jpg', 'image/jpg');
+        document.body.appendChild(canvas);
     };
 
     return (
