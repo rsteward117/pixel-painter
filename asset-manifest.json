@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pixel-painter/static/css/main.332c9077.css",
-    "main.js": "/pixel-painter/static/js/main.6e830af8.js",
+    "main.js": "/pixel-painter/static/js/main.1994d844.js",
     "static/js/787.7f002475.chunk.js": "/pixel-painter/static/js/787.7f002475.chunk.js",
     "static/media/logo.svg": "/pixel-painter/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/pixel-painter/index.html",
     "main.332c9077.css.map": "/pixel-painter/static/css/main.332c9077.css.map",
-    "main.6e830af8.js.map": "/pixel-painter/static/js/main.6e830af8.js.map",
+    "main.1994d844.js.map": "/pixel-painter/static/js/main.1994d844.js.map",
     "787.7f002475.chunk.js.map": "/pixel-painter/static/js/787.7f002475.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.332c9077.css",
-    "static/js/main.6e830af8.js"
+    "static/js/main.1994d844.js"
   ]
 }
