@@ -3,8 +3,8 @@ import PixelPainterBtns from './PixelPainterTools';
 import {FaBars} from 'react-icons/fa'
 import '../styles/pixelpainter.css';
 import PixelPainterTools from "./PixelPainterTools";
-import html2canvas from "html2canvas";
-import downloadjs from 'downloadjs';
+import domtoimage from 'dom-to-image';
+
 
 
 function PixelPainter() {
@@ -30,10 +30,17 @@ function PixelPainter() {
         }
     }
 
-    const handleImageDownload = async () => {
+    const handleImageDownload = () => {
         const element = document.getElementById("download");
-        const canvas = await html2canvas(element);
-        document.body.appendChild(canvas);
+        domtoimage.toJpeg(element)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            })
+            .catch(function (error){
+                console.log('something went wrong', error);
+            });
     };
 
     return (
