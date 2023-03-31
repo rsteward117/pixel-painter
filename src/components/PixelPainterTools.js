@@ -1,5 +1,5 @@
 import react, {useState} from "react";
-import { ChromePicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 import Draggable, {DraggableCore} from "react-draggable";
 import { slide as Menu } from "react-burger-menu";
 import '../styles/PixelPainterTools.css';
@@ -24,23 +24,19 @@ function PixelPainterTools({setNumberOfCells, numberOfCells, color, setColor, ha
 
             <form>
                 <label className="add-cells-label" for="changeCell">Change Cell size</label>
-                <input className="add-cells-input" name="changeCell" type="number" pattern="[0-9]" value={numberOfCells} onChange={(e) => {setNumberOfCells(e.target.value)}} />
+                <input className="add-cells-input" name="changeCell" type="number" pattern="[0-9]" value={numberOfCells} onChange={(e) =>{setNumberOfCells(e.target.value)}} />
             </form>
+            <div className='color-picker'>
+                <SketchPicker color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+            </div>
             <section className='buttons-container'>
                 <button className='pixel-painter-btn' onClick={clearGrid}>Clear Grid</button>
-                <button className='pixel-painter-btn' onClick={() => setShowColorPicker(showColorPicker => !showColorPicker)}>{showColorPicker ? 'Close Color Picker' : 'Display color Picker'}</button>
+                <p className="notify">You may also double-click to erase a cell</p>
                 <button className='pixel-painter-btn' onClick={handleImageDownload}>Save Your Art!</button>
             </section>
         </Menu>
 
-            {
-                showColorPicker && 
-                <Draggable>
-                    <div className='color-picker'>
-                        <ChromePicker color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                    </div>
-                </Draggable>
-            }
+
         </>
     );
   }

@@ -1,5 +1,6 @@
-body{
+html, body{
   background-color: #F9F6EE;
+  height: 100%;
 }
 
 #page-wrap {

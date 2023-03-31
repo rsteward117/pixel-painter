@@ -4,12 +4,13 @@ import {FaBars} from 'react-icons/fa'
 import '../styles/pixelpainter.css';
 import PixelPainterTools from "./PixelPainterTools";
 import domtoimage from 'dom-to-image';
+import downloadjs from 'downloadjs';
 
 
 
 function PixelPainter() {
 
-    const ref = useRef(null);
+    const element = useRef();
     //number of cells use state that holds the number of cells needed to be added in the grid
     const [numberOfCells, setNumberOfCells] = useState(16);
     const [color, setColor] = useState("#000000");
@@ -31,12 +32,13 @@ function PixelPainter() {
     }
 
     const handleImageDownload = () => {
-        const element = document.getElementById("download");
-        domtoimage.toJpeg(element)
+        const downloadElement = element.current;
+        domtoimage.toSvg(downloadElement)
             .then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
+                var link = document.createElement('a');
+                link.download = 'Your-Pixel-Art.svg';
+                link.href = dataUrl;
+                link.click()
             })
             .catch(function (error){
                 console.log('something went wrong', error);
@@ -54,8 +56,8 @@ function PixelPainter() {
             handleImageDownload={handleImageDownload}
         />
         
-        <main className='pixel-painter-main' id="download">
-            <div className='pixel-container'>
+        <main className='pixel-painter-main'>
+            <div className='pixel-container' ref={element}>
                 <div className='frame'>
                     {/*grid container div I'm trying accses and add new divs to.  */}
                     <div className='grid-container' style={{gridTemplateColumns: `repeat(${numberOfCells}, 1fr)`,gridTemplateRows: `repeat(${numberOfCells}, 1fr)`}}>
